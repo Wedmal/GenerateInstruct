@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace generateContentForInstructionSimonov.Additions
 {
     public class GlobalCursorPosition
     {
-        public static System.Drawing.Point Point = new System.Drawing.Point(0,0);
+        public static System.Drawing.Point Point = new System.Drawing.Point(0, 0);
         public string ServiseString = null;
-    
+
 
         public GlobalCursorPosition()
         {
@@ -32,7 +28,7 @@ namespace generateContentForInstructionSimonov.Additions
                     ServiseString = "SetWindowsHookEx Failed";
                     return;
                 }
-              
+
             }
             else
             {
@@ -44,7 +40,7 @@ namespace generateContentForInstructionSimonov.Additions
                     return;
                 }
                 hHook = 0;
-   
+
             }
             ///
         }

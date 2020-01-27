@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace generateContentForInstructionSimonov.MyUserControls
 {
-    public partial class PanelComponents : UserControl
+    public partial class PanelComponents : Classes.MyUserControl
     {
         private bool isGenerateComponents = false;
         public PanelComponents()
@@ -27,7 +20,7 @@ namespace generateContentForInstructionSimonov.MyUserControls
             base.OnLoad(e);
         }
 
-        private Task<bool> generateComponents() 
+        private Task<bool> generateComponents()
         {
             //for (int i = 0; i < 1000000000; i++) 
             //{
@@ -35,6 +28,6 @@ namespace generateContentForInstructionSimonov.MyUserControls
             //}
             return TaskEx.FromResult(false);
         }
-        
+
     }
 }

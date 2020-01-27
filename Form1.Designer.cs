@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,15 +37,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDiagnostic1 = new System.Windows.Forms.Label();
-            this.imgContextComponent1 = new generateContentForInstructionSimonov.MyUserControls.ImgContextComponent();
-            this.panelComponents1 = new generateContentForInstructionSimonov.MyUserControls.PanelComponents();
-            this.panel1.SuspendLayout();
+            this.textElement1 = new generateContentForInstructionSimonov.MyUserControls.TextElement();
+            this.imgContextComponent2 = new generateContentForInstructionSimonov.MyUserControls.ImgContextComponent();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.imgContextComponent1);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(463, 21);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 542);
@@ -110,39 +110,49 @@
             this.labelDiagnostic1.TabIndex = 0;
             this.labelDiagnostic1.Text = "Info:";
             // 
-            // imgContextComponent1
+            // textElement1
             // 
-            this.imgContextComponent1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.imgContextComponent1.Location = new System.Drawing.Point(147, 314);
-            this.imgContextComponent1.Name = "imgContextComponent1";
-            this.imgContextComponent1.Size = new System.Drawing.Size(57, 56);
-            this.imgContextComponent1.TabIndex = 7;
+            this.textElement1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textElement1.form = this;
+            this.textElement1.item_for_copy = true;
+            this.textElement1.Location = new System.Drawing.Point(15, 77);
+            this.textElement1.Name = "textElement1";
+            this.textElement1.Size = new System.Drawing.Size(150, 50);
+            this.textElement1.TabIndex = 11;
             // 
-            // panelComponents1
+            // imgContextComponent2
             // 
-            this.panelComponents1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelComponents1.Location = new System.Drawing.Point(12, 21);
-            this.panelComponents1.Name = "panelComponents1";
-            this.panelComponents1.Size = new System.Drawing.Size(445, 237);
-            this.panelComponents1.TabIndex = 6;
+            this.imgContextComponent2.AutoSize = true;
+            this.imgContextComponent2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.imgContextComponent2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgContextComponent2.BackgroundImage")));
+            this.imgContextComponent2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgContextComponent2.form = this;
+            this.imgContextComponent2.item_for_copy = true;
+            this.imgContextComponent2.Location = new System.Drawing.Point(15, 21);
+            this.imgContextComponent2.MaximumSize = new System.Drawing.Size(50, 50);
+            this.imgContextComponent2.MinimumSize = new System.Drawing.Size(50, 50);
+            this.imgContextComponent2.Name = "imgContextComponent2";
+            this.imgContextComponent2.Size = new System.Drawing.Size(50, 50);
+            this.imgContextComponent2.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(868, 651);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panelComponents1);
+            this.Controls.Add(this.textElement1);
+            this.Controls.Add(this.imgContextComponent2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -158,10 +168,10 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
-        private MyUserControls.PanelComponents panelComponents1;
-        private MyUserControls.ImgContextComponent imgContextComponent1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label labelDiagnostic1;
+        private MyUserControls.ImgContextComponent imgContextComponent2;
+        private MyUserControls.TextElement textElement1;
     }
 }
 

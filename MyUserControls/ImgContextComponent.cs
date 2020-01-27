@@ -1,39 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace generateContentForInstructionSimonov.MyUserControls
 {
-    public partial class ImgContextComponent : UserControl
+    public partial class ImgContextComponent : Classes.MyUserControl
     {
-        public event EventHandler newLocation;
-  
-        public double thisLocationX = 0;
-        public double thisLocationY = 0;
+
+
         public ImgContextComponent()
         {
             InitializeComponent();
-            this.newLocation += ImgContextComponent_newLocation;
+            this.MouseMove += ImgContextComponent_MouseMove;
 
+            this.BackgroundImage = MyUserControls.Resource1.img_ico_no_act_;
+
+            this.Size = new Size(50, 50);
+            ClickLocation = new Point(0, 0);
         }
 
 
-        private void ImgContextComponent_newLocation(object sender, EventArgs e)
-        {
-            newLocation(this.Location, e);
-        }
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            base.OnMouseDown(e);
-        }
+
         protected override void OnMouseUp(MouseEventArgs e)
         {
+            //ClickLocation = new Point(0, 0);
             base.OnMouseUp(e);
         }
 
