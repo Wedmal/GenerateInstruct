@@ -10,10 +10,7 @@ namespace generateContentForInstructionSimonov.MyUserControls
         public ImgContextComponent()
         {
             InitializeComponent();
-            this.MouseMove += ImgContextComponent_MouseMove;
-
             this.BackgroundImage = MyUserControls.Resource1.img_ico_no_act_;
-
             this.Size = new Size(50, 50);
             ClickLocation = new Point(0, 0);
         }
@@ -24,6 +21,10 @@ namespace generateContentForInstructionSimonov.MyUserControls
         {
             //ClickLocation = new Point(0, 0);
             base.OnMouseUp(e);
+        }
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            base.OnMouseMove(e);
         }
 
 

@@ -5,14 +5,15 @@ using System.Windows.Forms;
 
 namespace generateContentForInstructionSimonov.Classes
 {
+    [Serializable]
     public class MyUserControl : UserControl
     {
 
 
-               
-        protected void ImgContextComponent_MouseMove(object sender, MouseEventArgs e)
+
+        protected override void OnMouseMove(MouseEventArgs e)
         {
-            if (MouseButtons == System.Windows.Forms.MouseButtons.Left && !item_for_copy)
+            if (MouseButtons == System.Windows.Forms.MouseButtons.Left)
             {
                 var tmp = ClickLocation;//PointToClient(Cursor.Position);
                 if (tmp.X < 0 || tmp.Y < 0 || tmp.X > 50 || tmp.Y > 50)
@@ -21,28 +22,41 @@ namespace generateContentForInstructionSimonov.Classes
                 }
                 MoveThisObj(new Classes.SenderObjForEvent(objectEvent: this, locationCursorInObj: tmp), e);//вызываем событие
             }
+            base.OnMouseMove(e);
         }
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
+            this.BringToFront();
             ClickLocation = new Point(e.X, e.Y);
-            if (item_for_copy) 
-            {
-                CopyThisObj(this, e);
-            }
+
+              
+                if (e.Button == System.Windows.Forms.MouseButtons.Left)
+                {
+
+                    // запоминаем ссылку на элемент, который тащим
+                    this.AllowDrop = true;
+                    // начинаем перетаскивание
+                    if(this.Parent.GetType() == typeof(MyUserControls.PanelComponents))
+                    this.DoDragDrop(new Classes.sendDataInDragDrop(objSend:this, type: this.GetType()), DragDropEffects.Copy);
+                }
+            
             base.OnMouseDown(e);
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
-            Control c = this.Parent.GetChildAtPoint(this.PointToClient(e.Location));
-            Control d = this.Parent.GetChildAtPoint(e.Location);
-            Sorters.Square_bond.sort_Square(this.Parent);
+
+            //Sorters.Square_bond.sort_Square(this.Parent);
             base.OnMouseUp(e);
         }
 
 
-        
+        public interface ICloneable
+        {
+            object Clone();
+        }
+
 
 
 
@@ -57,7 +71,7 @@ namespace generateContentForInstructionSimonov.Classes
         protected void MoveThisObj(Classes.SenderObjForEvent senderObj, EventArgs e)
         {
 
-            moveThisObj(senderObj, e);
+            if(moveThisObj!=null) moveThisObj(senderObj, e);
         }
 
         private Form _form;
@@ -74,18 +88,18 @@ namespace generateContentForInstructionSimonov.Classes
             }
         }
 
-        private bool _item_for_copy;
-        [DisplayName("Пример для копирования")]
-        public bool item_for_copy
-        {
-            get
-            {
-                return _item_for_copy;
-            }
-            set
-            {
-                _item_for_copy = value;
-            }
-        }
+        //private bool _item_for_copy;
+        //[DisplayName("Пример для копирования")]
+        //public bool item_for_copy
+        //{
+        //    get
+        //    {
+        //        return _item_for_copy;
+        //    }
+        //    set
+        //    {
+        //        _item_for_copy = value;
+        //    }
+        //}
     }
 }

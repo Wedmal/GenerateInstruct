@@ -1,6 +1,6 @@
 ﻿namespace generateContentForInstructionSimonov.MyUserControls
 {
-    partial class ImgContextComponent
+    partial class ConstructContent
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -30,18 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // ImgContextComponent
+            // ConstructContent
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.MaximumSize = new System.Drawing.Size(50, 50);
-            this.MinimumSize = new System.Drawing.Size(50, 50);
-            this.Name = "ImgContextComponent";
-            this.Size = new System.Drawing.Size(50, 50);
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Name = "ConstructContent";
+            this.Size = new System.Drawing.Size(148, 148);
             this.ResumeLayout(false);
 
         }

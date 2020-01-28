@@ -28,27 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelDiagnostic2 = new System.Windows.Forms.Label();
             this.labelDiagnostic1 = new System.Windows.Forms.Label();
-            this.textElement1 = new generateContentForInstructionSimonov.MyUserControls.TextElement();
-            this.imgContextComponent2 = new generateContentForInstructionSimonov.MyUserControls.ImgContextComponent();
+            this.constructContent1 = new generateContentForInstructionSimonov.MyUserControls.ConstructContent();
+            this.panelComponents1 = new generateContentForInstructionSimonov.MyUserControls.PanelComponents();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(463, 21);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 542);
-            this.panel1.TabIndex = 0;
             // 
             // label1
             // 
@@ -70,10 +63,21 @@
             // 
             // panel3
             // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(12, 277);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(445, 286);
             this.panel3.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(323, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "label4";
             // 
             // label3
             // 
@@ -95,11 +99,22 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.labelDiagnostic2);
             this.panel2.Controls.Add(this.labelDiagnostic1);
             this.panel2.Location = new System.Drawing.Point(15, 569);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(731, 76);
             this.panel2.TabIndex = 8;
+            // 
+            // labelDiagnostic2
+            // 
+            this.labelDiagnostic2.AutoSize = true;
+            this.labelDiagnostic2.Location = new System.Drawing.Point(651, 57);
+            this.labelDiagnostic2.Name = "labelDiagnostic2";
+            this.labelDiagnostic2.Size = new System.Drawing.Size(35, 13);
+            this.labelDiagnostic2.TabIndex = 1;
+            this.labelDiagnostic2.Text = "label4";
             // 
             // labelDiagnostic1
             // 
@@ -110,30 +125,23 @@
             this.labelDiagnostic1.TabIndex = 0;
             this.labelDiagnostic1.Text = "Info:";
             // 
-            // textElement1
+            // constructContent1
             // 
-            this.textElement1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textElement1.form = this;
-            this.textElement1.item_for_copy = true;
-            this.textElement1.Location = new System.Drawing.Point(15, 77);
-            this.textElement1.Name = "textElement1";
-            this.textElement1.Size = new System.Drawing.Size(150, 50);
-            this.textElement1.TabIndex = 11;
+            this.constructContent1.AllowDrop = true;
+            this.constructContent1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.constructContent1.Location = new System.Drawing.Point(463, 40);
+            this.constructContent1.Name = "constructContent1";
+            this.constructContent1.Size = new System.Drawing.Size(393, 523);
+            this.constructContent1.TabIndex = 12;
             // 
-            // imgContextComponent2
+            // panelComponents1
             // 
-            this.imgContextComponent2.AutoSize = true;
-            this.imgContextComponent2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.imgContextComponent2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgContextComponent2.BackgroundImage")));
-            this.imgContextComponent2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imgContextComponent2.form = this;
-            this.imgContextComponent2.item_for_copy = true;
-            this.imgContextComponent2.Location = new System.Drawing.Point(15, 21);
-            this.imgContextComponent2.MaximumSize = new System.Drawing.Size(50, 50);
-            this.imgContextComponent2.MinimumSize = new System.Drawing.Size(50, 50);
-            this.imgContextComponent2.Name = "imgContextComponent2";
-            this.imgContextComponent2.Size = new System.Drawing.Size(50, 50);
-            this.imgContextComponent2.TabIndex = 10;
+            this.panelComponents1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelComponents1.form = null;
+            this.panelComponents1.Location = new System.Drawing.Point(15, 21);
+            this.panelComponents1.Name = "panelComponents1";
+            this.panelComponents1.Size = new System.Drawing.Size(442, 237);
+            this.panelComponents1.TabIndex = 13;
             // 
             // Form1
             // 
@@ -141,10 +149,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(868, 651);
-            this.Controls.Add(this.textElement1);
-            this.Controls.Add(this.imgContextComponent2);
+            this.Controls.Add(this.panelComponents1);
+            this.Controls.Add(this.constructContent1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
@@ -153,6 +160,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -161,8 +170,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
@@ -170,8 +177,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label labelDiagnostic1;
-        private MyUserControls.ImgContextComponent imgContextComponent2;
-        private MyUserControls.TextElement textElement1;
+        private System.Windows.Forms.Label labelDiagnostic2;
+        private System.Windows.Forms.Label label4;
+        private MyUserControls.ConstructContent constructContent1;
+        private MyUserControls.PanelComponents panelComponents1;
     }
 }
 

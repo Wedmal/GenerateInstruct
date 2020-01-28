@@ -7,7 +7,7 @@ namespace generateContentForInstructionSimonov.MyUserControls
         public TextElement()
         {
             InitializeComponent();
-            this.MouseMove += ImgContextComponent_MouseMove;
+
 
             //this.BackgroundImage = MyUserControls.Resource1.img_ico_no_act_;
             ClickLocation = new Point(0, 0);
