@@ -67,13 +67,38 @@ namespace generateContentForInstructionSimonov.MyUserControls
                 this.UpdateZOrder();
             }
             eventObj.BringToFront();
-  
 
+            System.Drawing.Point CursorPosition =
+                new Point(x: this.PointToClient(Cursor.Position).X,
+                          y: this.PointToClient(Cursor.Position).Y);
             System.Drawing.Point newLocationObj =
-                new Point(x: this.PointToClient(Cursor.Position).X - objLocationPointToScreen.LocationCursorInObj.X,
-                          y: this.PointToClient(Cursor.Position).Y - objLocationPointToScreen.LocationCursorInObj.Y);
-            
-            eventObj.Location = new Point(newLocationObj.X, newLocationObj.Y);
+                new Point(x: CursorPosition.X - objLocationPointToScreen.LocationCursorInObj.X,
+                          y: CursorPosition.Y - objLocationPointToScreen.LocationCursorInObj.Y);
+            System.Drawing.Point PatrentLocation =
+                new Point(x: eventObj.Parent.Location.X,
+                          y: eventObj.Parent.Location.Y);
+
+            //Control PaterControl = eventObj.Parent;
+            //Control BigPaterControl = null;
+            //if(PaterControl.GetType()!=eventObj.pa)
+
+            System.Drawing.Point CursorLocationForParent =
+                new Point(x: this.Parent.PointToClient(Cursor.Position).X,
+                          y: this.Parent.PointToClient(Cursor.Position).Y);
+
+
+            if (this.Parent.PointToClient(Cursor.Position).X < eventObj.Parent.Location.X ||
+                this.Parent.PointToClient(Cursor.Position).Y < eventObj.Parent.Location.Y ||
+                this.Parent.PointToClient(Cursor.Position).X > eventObj.Parent.Location.X + eventObj.Parent.Size.Width ||
+                this.Parent.PointToClient(Cursor.Position).Y > eventObj.Parent.Location.Y + eventObj.Parent.Size.Height)
+            {
+
+
+            }
+            else 
+            {
+                eventObj.Location = new Point(newLocationObj.X, newLocationObj.Y);
+            }
 
         }
 
@@ -94,7 +119,10 @@ namespace generateContentForInstructionSimonov.MyUserControls
 
         }
 
-
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            base.OnMouseLeave(e);
+        }
 
         private void ConstructContent_DragLeave(object sender, EventArgs e)
         {

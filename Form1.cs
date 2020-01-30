@@ -19,6 +19,18 @@ namespace generateContentForInstructionSimonov
 
         protected override void OnLoad(EventArgs e)
         {
+            void sort_child_controls_and_set_cursor(Control control) 
+            {
+                control.Cursor = Classes.GetCursor._getCursor(image: MyUserControls.Resource1.CursorGreen1);
+                foreach (Control innerControl in control.Controls)
+                {
+                    innerControl.Cursor = Classes.GetCursor._getCursor(image: MyUserControls.Resource1.CursorGreen1);
+                    sort_child_controls_and_set_cursor(innerControl);
+                }
+            }
+            sort_child_controls_and_set_cursor(this);
+
+
             BackgroundWorker worker = new BackgroundWorker();
             worker.WorkerSupportsCancellation = false;
             worker.WorkerReportsProgress = false;
@@ -44,10 +56,15 @@ namespace generateContentForInstructionSimonov
         {
             try
             {
+
+
+
+
                 List<Control> listControl = new List<Control>();
                 System.Threading.Timer check_New_obj_in_Form1 = new System.Threading.Timer(_check_New_obj_in_Form1, null, 1000, 1000);
 
                 string allControls = GetAllInnerControlsFor(this);
+
 
                 string GetAllInnerControlsFor(Control control)
                 {
@@ -99,7 +116,7 @@ namespace generateContentForInstructionSimonov
             //imgContextComponent2.moveThisObj += ObjectMyControl_newLocation;
             //imgContextComponent2.CopyThisObj += CopyElementMenu;
             //textElement1.CopyThisObj += CopyElementMenu;
-            
+
 
 
 
@@ -350,6 +367,11 @@ namespace generateContentForInstructionSimonov
             {
                 e.Effect = DragDropEffects.Copy;
             }
+        }
+
+        private void Form1_ControlAdded(object sender, ControlEventArgs e)
+        {
+
         }
     }
 }

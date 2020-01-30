@@ -37,8 +37,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDiagnostic2 = new System.Windows.Forms.Label();
             this.labelDiagnostic1 = new System.Windows.Forms.Label();
-            this.constructContent1 = new generateContentForInstructionSimonov.MyUserControls.ConstructContent();
             this.panelComponents1 = new generateContentForInstructionSimonov.MyUserControls.PanelComponents();
+            this.constructContent1 = new generateContentForInstructionSimonov.MyUserControls.ConstructContent();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -125,15 +125,6 @@
             this.labelDiagnostic1.TabIndex = 0;
             this.labelDiagnostic1.Text = "Info:";
             // 
-            // constructContent1
-            // 
-            this.constructContent1.AllowDrop = true;
-            this.constructContent1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.constructContent1.Location = new System.Drawing.Point(463, 40);
-            this.constructContent1.Name = "constructContent1";
-            this.constructContent1.Size = new System.Drawing.Size(393, 523);
-            this.constructContent1.TabIndex = 12;
-            // 
             // panelComponents1
             // 
             this.panelComponents1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -143,22 +134,32 @@
             this.panelComponents1.Size = new System.Drawing.Size(442, 237);
             this.panelComponents1.TabIndex = 13;
             // 
+            // constructContent1
+            // 
+            this.constructContent1.AllowDrop = true;
+            this.constructContent1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.constructContent1.Location = new System.Drawing.Point(463, 40);
+            this.constructContent1.Name = "constructContent1";
+            this.constructContent1.Size = new System.Drawing.Size(393, 523);
+            this.constructContent1.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(868, 651);
-            this.Controls.Add(this.panelComponents1);
-            this.Controls.Add(this.constructContent1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelComponents1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.constructContent1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.Form1_ControlAdded);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
