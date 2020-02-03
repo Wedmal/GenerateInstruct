@@ -66,7 +66,7 @@ namespace generateContentForInstructionSimonov.Classes
                 TextMenu = textMenu;
             }
 
-            public static event EventHandler onClick;
+            public event EventHandler onClick;
             public string TextMenu { get; set; }
 
         }
