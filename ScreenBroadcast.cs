@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+using Emgu.CV;
+using Emgu.CV.Structure;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,9 +12,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Emgu.CV;
-using Emgu.CV.CvEnum;
-using Emgu.CV.Structure;
 
 
 
@@ -82,7 +82,8 @@ namespace generateContentForInstructionSimonov
                     try
                     {
                     _capture.Retrieve(_frame, 0);
-                    Bitmap tmpBmp= new Bitmap(_frame.ToImage<Bgr, Byte>().Bitmap);
+                    
+                    Emgu.CV.Image<Bgr,byte> tmpBmp= _frame.ToImage<Bgr, byte>();
                     this.Invoke(new Action(() =>
                     {
                         //pictureBox1.Image = tmpBmp;
@@ -96,7 +97,7 @@ namespace generateContentForInstructionSimonov
                         
                       
 
-                        DataFromSend data = new DataFromSend(id: i, bitmap: tmpBmp);
+                        DataFromSend data = new DataFromSend(id: i, cvImage: tmpBmp);
 
                         BinaryFormatter binFormat = new BinaryFormatter();
                         var stream = new MemoryStream();
@@ -195,23 +196,23 @@ namespace generateContentForInstructionSimonov
         [Serializable]
         private class DataFromSend 
         {
-            public DataFromSend(int id, Bitmap bitmap)
+            public DataFromSend(int id, Emgu.CV.Image<Bgr, byte> cvImage)
             {
                 Id = id;
-                this.bitmap = bitmap;
+                this.bitmap = cvImage;
             }
 
             public int Id { set; get; }
-            public Bitmap bitmap { get; set; }
+            public Emgu.CV.Image<Bgr, byte> bitmap { get; set; }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             _capture.Retrieve(_frame, 0);
-            Bitmap tmpBmp = new Bitmap(_frame.ToImage<Bgr, Byte>().Bitmap);
+            Emgu.CV.Image<Bgr, byte> tmpBmp = _frame.ToImage<Bgr, byte>();
 
 
-            DataFromSend data = new DataFromSend(id: i, bitmap: tmpBmp);
+            DataFromSend data = new DataFromSend(id: i, cvImage: tmpBmp);
 
             BinaryFormatter binFormat = new BinaryFormatter();
             var stream = new MemoryStream();
