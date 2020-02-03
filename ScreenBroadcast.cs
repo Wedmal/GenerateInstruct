@@ -207,6 +207,21 @@ namespace generateContentForInstructionSimonov
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+
+            _capture.Retrieve(_frame, 0);
+            while (true) 
+            {
+                
+            }
+
+
+
+
+
+
+
             _capture.Retrieve(_frame, 0);
             Bitmap tmpBmp = new Bitmap(_frame.ToImage<Bgr, Byte>().Bitmap);
 

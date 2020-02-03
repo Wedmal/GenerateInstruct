@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -24,6 +25,7 @@ namespace generateContentForInstructionSimonov.Broadcast
 
         }
 
+        public static event EventHandler NewContentEvent;
         public static void GetData() 
         {
             BackgroundWorker worker = new BackgroundWorker();
