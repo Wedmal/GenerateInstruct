@@ -1,2 +1,6 @@
 # GenerateInstruct
-The application allows you to generate instructions and upload to the server.
+"dependencies": {
+  "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
+  "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+  "Microsoft.AspNetCore.Owin": "1.0.0"
+},
